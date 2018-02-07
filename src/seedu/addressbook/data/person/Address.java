@@ -8,7 +8,7 @@ import seedu.addressbook.data.exception.IllegalValueException;
  */
 public class Address {
 
-    public static final String EXAMPLE = "123, some street";
+    public static final String EXAMPLE = "123, some street, #06-06, 460051";
     public static final String MESSAGE_ADDRESS_CONSTRAINTS = "Person addresses can be in any format";
     public static final String ADDRESS_VALIDATION_REGEX = ".+";
 
@@ -37,11 +37,15 @@ public class Address {
         createAddress(trimmedAddress);
     }
 
-public void createAddress (String trimmedAddress){
+public void createAddress (String trimmedAddress) throws IllegalValueException
+{
 
-        String initialReformattedAddress = trimmedAddress.substring(2); // To remove a/ from address input
-         String[] splitAddress = initialReformattedAddress.split(", ");
-         Block block = new Block(splitAddress[0]);
+         String[] splitAddress = trimmedAddress.split(", ");
+
+         if (splitAddress.length  != 4) {
+             throw new IllegalValueException(MESSAGE_ADDRESS_CONSTRAINTS);
+         }
+             Block block = new Block(splitAddress[0]);
          Street street = new Street(splitAddress[1]);
          Unit unit = new Unit(splitAddress[2]);
          PostalCode postalCode = new PostalCode(splitAddress[3]);
