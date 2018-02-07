@@ -20,9 +20,7 @@ public class CommandResult {
         this.feedbackToUser = feedbackToUser;
         relevantPersons = null;
     }
-    /*
-    Changed something
-     */
+
     public CommandResult(String feedbackToUser, List<? extends ReadOnlyPerson> relevantPersons) {
         this.feedbackToUser = feedbackToUser;
         this.relevantPersons = relevantPersons;
