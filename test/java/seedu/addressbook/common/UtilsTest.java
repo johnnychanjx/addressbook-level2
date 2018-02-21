@@ -12,26 +12,26 @@ public class UtilsTest {
 
     @Test
     public void isAnyNull() throws Exception {
-<<<<<<< Updated upstream
-                //empty list
-                assertNoNull();
 
-                //all objects are null
-               assertThereIsNull(null, null);
-               assertThereIsNull(null, null, null);
+        //empty list
+        assertNoNull();
 
-               //there exists a null object
-               assertThereIsNull(null, "Tom", "Dick", null);
-               assertThereIsNull("Tom", null);
-               assertThereIsNull("Tom", "", "Dick", null);
-               assertThereIsNull("", "Tom", "Dick", null);
-               assertThereIsNull(null, new Integer(1));
-               assertThereIsNull(null, 1, new Integer(1));
+        //all objects are null
+        assertThereIsNull(null, null);
+        assertThereIsNull(null, null, null);
 
-                       //there is no null objects
-            assertNoNull("Tom", "Dick", "Harry");
-            assertNoNull(1, 2);
-            assertNoNull(1, 2, 3);
+        //there exists a null object
+        assertThereIsNull(null, "Tom", "Dick", null);
+        assertThereIsNull("Tom", null);
+        assertThereIsNull("Tom", "", "Dick", null);
+        assertThereIsNull("", "Tom", "Dick", null);
+        assertThereIsNull(null, new Integer(1));
+        assertThereIsNull(null, 1, new Integer(1));
+
+        //there is no null objects
+        assertNoNull("Tom", "Dick", "Harry");
+        assertNoNull(1, 2);
+        assertNoNull(1, 2, 3);
 
         //empty list
         assertNoNull();
@@ -53,7 +53,6 @@ public class UtilsTest {
         assertNoNull(1, 2);
         assertNoNull(1, 2, 3);
             }
-
             private void assertThereIsNull(Object... objects) {assertTrue(Utils.isAnyNull(objects));}
             private void assertNoNull(Object... objects) {assertFalse(Utils.isAnyNull(objects));}
 
